@@ -1,0 +1,37 @@
+<!-- photo of the month as homepage
+
+space game
+space quiz
+
+full page backgound image carousal using tailwind for astro js
+ that changes the image after every 5 seconds and loads the image
+  from a worker at that moment only and overlay a bold text with a dark
+   overlay on the image for home page -->
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <button id="theme-toggle" class="text-gray-500 dark:text-gray-400">Toggle Theme</button>
+        <h1 class="text-3xl font-bold text-center mb-16 dark:text-white">Blog Post Title</h1>
+        <img src="featured-image.jpg" alt="Featured Image" class="rounded-lg w-1/2 mx-auto shadow-md mb-8 dark:shadow-gray-700">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-gray-700 dark:text-gray-300">Content goes here.</p>
+        </div>
+    </div>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>

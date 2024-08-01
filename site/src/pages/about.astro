@@ -1,0 +1,240 @@
+---
+import Test from "../layouts/Test.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { Image } from 'astro:assets';
+import bg from '../assets/images/bg1.webp'
+---
+
+
+		<Test>
+		
+		<main>
+			<section class="bg-white dark:bg-gray-900">
+				<div class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+					<div class="w-full lg:w-1/2">
+						<div class="lg:max-w-lg">
+							<h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
+								Easiest way to create your website
+							</h1>
+			
+							<div class="mt-8 space-y-5">
+								<p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+			
+									<span class="mx-2">Clean and Simple Layout</span>
+								</p>
+			
+								<p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+			
+									<span class="mx-2">Just Copy Paste Codeing</span>
+								</p>
+			
+								<p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+			
+									<span class="mx-2">Easy to Use</span>
+								</p>
+							</div>
+						</div>
+			
+						<div class="w-full mt-8 bg-transparent border rounded-md lg:max-w-sm dark:border-gray-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 dark:focus-within:border-blue-400 focus-within:ring-opacity-40">
+							<form class="flex flex-col lg:flex-row">
+								<input type="email" placeholder="Enter your email address" class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
+			
+								<button type="button" class="h-10 px-4 py-2 m-1 text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
+									Join Us
+								</button>
+							</form>
+						</div>
+					</div>
+			
+					<div class="flex items-center justify-center w-full h-96 lg:w-1/2">
+						<Image src={bg} alt="background" width={500} loading = "eager"></Image>
+					</div>
+				</div>
+			</section>
+		</main>
+
+
+
+		
+
+		<section class="bg-white dark:bg-gray-900">
+			<div class="container px-6 py-10 mx-auto">
+				<h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore our <br> awesome <span class="underline decoration-blue-500">Components</span></h1>
+		
+				<p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
+				</p>
+		
+				<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+					<div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+						<span class="inline-block text-blue-500 dark:text-blue-400">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+							</svg>
+						</span>
+		
+						<h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+		
+						<p class="text-gray-500 dark:text-gray-300">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+						</p>
+		
+						<a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</a>
+					</div>
+		
+					<div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+						<span class="inline-block text-blue-500 dark:text-blue-400">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+							</svg>
+						</span>
+		
+						<h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Easy to customiztions</h1>
+		
+						<p class="text-gray-500 dark:text-gray-300">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+						</p>
+		
+						<a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</a>
+					</div>
+		
+					<div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+						<span class="inline-block text-blue-500 dark:text-blue-400">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+							</svg>
+						</span>
+		
+						<h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Simple & clean designs</h1>
+		
+						<p class="text-gray-500 dark:text-gray-300">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+						</p>
+		
+						<a href="#" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="bg-white dark:bg-gray-900">
+			<div class="container px-6 py-10 mx-auto">
+				<h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Portfolio
+				</h1>
+		
+				<p class="mt-4 text-center text-gray-500 dark:text-gray-300">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
+				</p>
+		
+		
+				<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+					<div>
+						<img class="object-cover w-full rounded-lg h-96 "
+							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
+							alt="">
+						<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">Best website
+							collections</h2>
+						<p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">Website</p>
+					</div>
+		
+					<div>
+						<img class="object-cover w-full rounded-lg h-96 "
+							src="https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+							alt="">
+						<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">Block of Ui kit
+							collections</h2>
+						<p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">Ui kit</p>
+					</div>
+		
+					<div>
+						<img class="object-cover w-full rounded-lg h-96 "
+							src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+							alt="">
+						<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">Ton’s of mobile mockup
+						</h2>
+						<p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">Mockups</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+		<section class="bg-white dark:bg-gray-900">
+			<div class="container max-w-4xl px-6 py-10 mx-auto">
+				<h1 class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions</h1>
+		
+				<div class="mt-12 space-y-8">
+					<div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+						<button class="flex items-center justify-between w-full p-8">
+							<h1 class="font-semibold text-gray-700 dark:text-white">How i can play for my appoinment ?</h1>
+		
+							<span class="text-gray-400 bg-gray-200 rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+								</svg>
+							</span>
+						</button>
+		
+						<hr class="border-gray-200 dark:border-gray-700">
+		
+						<p class="p-8 text-sm text-gray-500 dark:text-gray-300">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+						</p>
+					</div>
+		
+					<div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+						<button class="flex items-center justify-between w-full p-8">
+							<h1 class="font-semibold text-gray-700 dark:text-white">Is the cost of the appoinment covered by private health insurance?</h1>
+		
+							<span class="text-white bg-blue-500 rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+								</svg>
+							</span>
+						</button>
+					</div>
+
+
+					<div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+						<button class="flex items-center justify-between w-full p-8">
+							<h1 class="font-semibold text-gray-700 dark:text-white">What can i expect at my first consultation?</h1>
+		
+							<span class="text-white bg-blue-500 rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+								</svg>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<Test/>
