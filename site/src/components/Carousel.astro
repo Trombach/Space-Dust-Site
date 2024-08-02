@@ -1,58 +1,55 @@
---- 
+---
 import { Image } from 'astro:assets';
-import home1 from '../assets/images/home/1.webp';
-import home2 from '../assets/images/home/2.webp';
-import home3 from '../assets/images/home/3.webp';
+import image1 from '../assets/images/home/1.webp';
+import image2 from '../assets//images/home/2.webp';
+import image3 from '../assets//images/home/3.webp';
 
 
 const images = [
-  home1,
-  home2,
-  home3,
+  { src: image1, alt: 'Image 1' ,text: 'earth'},
+  { src: image2, alt: 'Image 2', text: 'bird' },
+  { src: image3, alt: 'Image 3', text: 'mars' },
 ];
-
-// <Image src={myImage} alt="Description of the image" />
 ---
 
-<html>
-  <head>
-    <style>
-      .carousel {
-        @apply relative w-full h-screen bg-cover bg-center transition-all duration-1000;
-      }
-      .overlay {
-        @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center;
-      }
-      .text {
-        @apply text-white text-4xl font-bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="carousel" class="carousel">
-      <div class="overlay">
-        <div class="text">Discover The Unknown</div>
-        <a href="../assets/images/home/1.webp">test</a>
+<div class="relative w-full h-screen overflow-hidden">
+  <div class="carousel relative w-full h-full">
+    {images.map((img, index) => (
+      <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-index={index}>
+        <Image src={img.src} alt={img.alt}  loading='eager' class="w-full h-full object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h1 class="text-white text-4xl font-bold">Discover the Unknown.</h1>
+          {/* <h1 class="text-white text-4xl font-bold">Discover {img.text}</h1> */}
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
 
-    <script>
-      const images = [
-        
-        '/assets/images/home/1.webp',
-        '../assets/images/home/2.webp',
-        '../assets/images/home/3.webp',
-      ];
-      let currentIndex = 0;
+<style>
+  .carousel-item {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  .carousel-item.show {
+    opacity: 1;
+  }
+</style>
 
-      function changeBackgroundImage() {
-        const carousel = document.getElementById('carousel');
-        carousel.style.backgroundImage = `url(${images[currentIndex]})`;
-        currentIndex = (currentIndex + 1) % images.length;
-      }
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const totalItems = carouselItems.length;
 
-      setInterval(changeBackgroundImage, 7000);
-      window.onload = changeBackgroundImage;
-    </script>
-  </body>
-</html>
+    function showNextImage() {
+      carouselItems[currentIndex].classList.remove('show');
+      currentIndex = (currentIndex + 1) % totalItems;
+      carouselItems[currentIndex].classList.add('show');
+    }
+
+    // Initially show the first image
+    carouselItems[currentIndex].classList.add('show');
+    setInterval(showNextImage, 7000);
+  });
+</script>

@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+#things which are no longer needed but still keeping for backup, cause idk how to use git pull :/
+src/misc

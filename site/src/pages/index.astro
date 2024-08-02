@@ -1,43 +1,11 @@
-<!-- ---
-// import { client:only } from 'astro';
-import image1 from '../images/image1.jpg';
-import image2 from '../images/image2.jpg';
-import image3 from '../images/image3.jpg';
+---
+import Carousel from '../components/Carousel.astro';
 
-@only
-function ImageCarousel() {
-  const carousel = document.getElementById('carousel');
-  const images = carousel.querySelectorAll('img');
-  let slideIndex = 0;
+import Test from '../layouts/Test.astro';
+---
 
-  function showSlide(n) {
-    images.forEach((image, index) => {
-      image.classList.remove('hidden');
-      if (index === n) {
-        image.classList.add('block');
-      } else {
-        image.classList.add('hidden');
-      }
-    });
-    slideIndex = n;
-  }
+<Test>
 
-  function nextSlide() {
-    showSlide((slideIndex + 1) % images.length);
-  }
+  <Carousel />
 
-  showSlide(slideIndex); // Show the first slide
-
-  const intervalId = setInterval(nextSlide, 5000); // Change image every 5 seconds
-
-  return (
-    <div id="carousel" class="relative w-full h-screen overflow-hidden">
-      <img src={image1} alt="Slide 1" class="absolute inset-0 w-full h-full object-cover" />
-      <img src={image2} alt="Slide 2" class="absolute inset-0 w-full h-full object-cover hidden" />
-      <img src={image3} alt="Slide 3" class="absolute inset-0 w-full h-full object-cover hidden" />
-    </div>
-  );
-}
-
-export default ImageCarousel;
---- -->
+</Test>
