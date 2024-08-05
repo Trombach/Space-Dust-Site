@@ -7,6 +7,7 @@ import InstaLogo from '../assets/icons/black-instagram-icon.svg'
 import DiscordLogo from '../assets/icons/discord-round-black-icon.svg'
 import YoutubeLogo from '../assets/icons/youtube-icon.svg'
 import TwitterLogo from '../assets/icons/x-social-media-black-icon.svg'
+import LinkedinLogo from '../assets/icons/linkedin.svg'
 import HamburgerIcon from '../assets/icons/burger-menu.svg'
 import CrossIcon from '../assets/icons/cross-icon.svg'
 
@@ -19,9 +20,9 @@ import { ViewTransitions } from 'astro:transitions';
         <ViewTransitions />
     </head>
 <body>
-    <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div></div>
+    <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div></div> -->
 
-<nav x-data="{ isOpen: false }" class="bg-gray-500 shadow fill-25 rounded-2xl m-2 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-gray-100  dark:bg-gray-800">
+<nav x-data="{ isOpen: false }" class="bg-white shadow fill-25 rounded-2xl m-2 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-45 border border-gray-100  dark:bg-gray-800">
     <div class="container px-6 py-4 mx-auto">
         <div class="lg:flex lg:items-center">
             <div class="flex items-center justify-between">
@@ -67,6 +68,10 @@ import { ViewTransitions } from 'astro:transitions';
         
                     <a href="https://discord.gg/K4hR36xcrQ" class="mx-2 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Discord">
                         <Image src={DiscordLogo} loading="eager" alt="DiscordLogo" width="20" />
+                    </a>
+
+                    <a href="https://linkedin.com/company/thespacedust" class="mx-2 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Discord">
+                        <Image src={LinkedinLogo} loading="eager" alt="LinkedinLogo" width="20" />
                     </a>
                 </div>
             </div>

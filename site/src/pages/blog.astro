@@ -1,6 +1,6 @@
 ---
 import Test from "../layouts/Test.astro";
-
+const allPosts = await Astro.glob('../content/blog/*.md');
 import { Image } from "astro:assets";
 ---
 
@@ -18,24 +18,30 @@ import { Image } from "astro:assets";
                </div>
        
                <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
-                   <div>
+
+                {allPosts.map((post) =>
+                
+             
+                <div>
                        <div class="relative">
-                           <img class="object-cover object-center w-full h-64 rounded-lg lg:h-80" src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+                          {/* <Image src = {post.frontmatter.heroImage} alt="heroimage"></Image> */}
                        </div>
        
                        <h1 class="mt-6 text-xl font-semibold text-gray-800 dark:text-white">
-                           What do you want to know about UI
+                           {post.frontmatter.title}
                        </h1>
        
                        <hr class="w-32 my-6 text-blue-500">
        
                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores
-                           praesentium, alias nam? Tempore
+                           {post.frontmatter.description}
                        </p>
        
                        <a href="#" class="inline-block mt-4 text-blue-500 underline hover:text-blue-400">Read more</a>
                    </div>
+                
+                )}
+
        
                    <div>
                        <div class="relative">

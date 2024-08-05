@@ -1,96 +1,46 @@
 ---
 import Carousel from '../components/Carousel.astro';
+import { Image } from 'astro:assets';
+import aboutimg from '../assets/images/home/5.webp'
 
 import Test from '../layouts/Test.astro';
 ---
 <Test>
-<div class="bg-indigo-600">
-    <div class="max-w-screen-xl mx-auto px-4 py-3 items-center justify-between text-white sm:flex md:px-8">
-        <div class="flex gap-x-4">
-            <div class="w-10 h-10 flex-none rounded-lg bg-indigo-800 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                </svg>
-            </div>
-            <p class="py-2 font-medium">
-                We just launched a new version of our library.
+
+    <section x-data="{ stats: [
+    { data: '35K', title: 'Customers' },
+    { data: '10K+', title: 'Downloads' },
+    { data: '40+', title: 'Countries' },
+    { data: '30M+', title: 'Total revenue' }
+    ] }" class="py-14">
+    <div class="max-w-screen-xl mx-auto px-4 text-gray-600 gap-x-12 items-start justify-between lg:flex md:px-8">
+    <div class="sm:hidden lg:block lg:max-w-xl">
+        <Image src = {aboutimg} alt='about us'></Image>
+    </div>
+    <div class="mt-6 gap-12 sm:mt-0 md:flex lg:block">
+        <div class="max-w-2xl">
+            <h3 class="text-gray-800 text-3xl font-semibold sm:text-4xl">
+                About us
+            </h3>
+            <p class="mt-3 max-w-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
             </p>
         </div>
-        <a href="javascript:void(0)" class="inline-block w-full mt-3 py-2 px-3 text-center text-indigo-600 font-medium bg-white duration-150 hover:bg-gray-100 active:bg-gray-200 rounded-lg sm:w-auto sm:mt-0 sm:text-sm">
-            Learn more
-        </a>
+        <div class="flex-none mt-6 md:mt-0 lg:mt-6">
+            <ul class="inline-grid gap-y-8 gap-x-14 grid-cols-2">
+                <template x-for="(item, idx) in stats" :key="idx">
+                    <li>
+                        <h4 class="text-4xl text-indigo-600 font-semibold" x-text="item.data"></h4>
+                        <p class="mt-3 font-medium" x-text="item.title"></p>
+                    </li>
+                </template>
+            </ul>
+        </div>
     </div>
-</div>
-<hr><hr>
-<!-------------------------------------------------- -->
-<Carousel />
-<!-------------------------------------------------- -->
-<div class="bg-indigo-700 p-4">
-    <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
-        <div class="flex md:contents flex-row-reverse">
-            <div
-                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">New Event 1</h3>
-                <p class="mt-2 leading-6">Description of the first event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 1</span>
-            </div>
-            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
-                    </div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
-            </div>
-        </div>
-
-
-        <div class="flex md:contents">
-            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300"></div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
-            </div>
-            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">New Event 2</h3>
-                <p class="mt-2 leading-6">Description of the second event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 2</span>
-            </div>
-        </div>
-
-        <div class="flex md:contents flex-row-reverse">
-            <div
-                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">New Event 3</h3>
-                <p class="mt-2 leading-6">Description of the first event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 3</span>
-            </div>
-            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
-                    </div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
-            </div>
-        </div>
-
-        <div class="flex md:contents">
-            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300"></div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
-            </div>
-            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">New Event 4</h3>
-                <p class="mt-2 leading-6">Description of the second event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 4</span>
-            </div>
-        </div>
-
     </div>
-</div>
-
+    </section>
+    
+    
 
 <!-------------------------------------------------- -->
 
@@ -98,7 +48,7 @@ import Test from '../layouts/Test.astro';
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
         <div class="max-w-xl mx-auto text-center">
             <h3 class="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                Who's using Float UI?
+                Who's using Space Dust?
             </h3>
             <p class="text-gray-600 mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim nibh nisl, vel egestas magna rhoncus at. Nunc elementum efficitur tortor in laoreet.
@@ -186,39 +136,73 @@ import Test from '../layouts/Test.astro';
 
 
 <!-------------------------------------------------- -->
+<!-------------------------------------------------- -->
+<div class="bg-black p-4">
+    <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
+        <div class="flex md:contents flex-row-reverse">
+            <div
+                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Ideation</h3>
+                <p class="mt-2 leading-6">Description of the first event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">June 2021</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
+                    </div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+        </div>
 
-<section x-data="{ stats: [
-{ data: '35K', title: 'Customers' },
-{ data: '10K+', title: 'Downloads' },
-{ data: '40+', title: 'Countries' },
-{ data: '30M+', title: 'Total revenue' }
-] }" class="py-14">
-<div class="max-w-screen-xl mx-auto px-4 text-gray-600 gap-x-12 items-start justify-between lg:flex md:px-8">
-<div class="sm:hidden lg:block lg:max-w-xl">
-	<img src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="rounded-lg" alt="" />
+
+        <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300"></div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Website Complete</h3>
+                <p class="mt-2 leading-6">Description of the second event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Till August 2024</span>
+            </div>
+        </div>
+
+        <div class="flex md:contents flex-row-reverse">
+            <div
+                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">New Event 3</h3>
+                <p class="mt-2 leading-6">Description of the first event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 3</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
+                    </div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+        </div>
+
+        <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300"></div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">New Event 4</h3>
+                <p class="mt-2 leading-6">Description of the second event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">Date 4</span>
+            </div>
+        </div>
+
+    </div>
 </div>
-<div class="mt-6 gap-12 sm:mt-0 md:flex lg:block">
-	<div class="max-w-2xl">
-		<h3 class="text-gray-800 text-3xl font-semibold sm:text-4xl">
-			We do our best to make customers always happy
-		</h3>
-		<p class="mt-3 max-w-xl">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
-		</p>
-	</div>
-	<div class="flex-none mt-6 md:mt-0 lg:mt-6">
-		<ul class="inline-grid gap-y-8 gap-x-14 grid-cols-2">
-			<template x-for="(item, idx) in stats" :key="idx">
-				<li>
-					<h4 class="text-4xl text-indigo-600 font-semibold" x-text="item.data"></h4>
-					<p class="mt-3 font-medium" x-text="item.title"></p>
-				</li>
-			</template>
-		</ul>
-	</div>
-</div>
-</div>
-</section>
+
 
 <!-------------------------------------------------- -->
 <section class="bg-white dark:bg-gray-900">
