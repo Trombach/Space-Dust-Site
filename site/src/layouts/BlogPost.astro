@@ -1,85 +1,58 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-// import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+import { Image } from 'astro:assets';
+// import HeroImage from '../../assets/images/AURA.webp'
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const {frontmatter} = Astro.props;
+const {layout,title,description,pubDate,author,hero_image,path} = frontmatter;
 ---
-
+<!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<!-- <BaseHead/> -->
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-
-	<body>
+	<body >
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<!-- <div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div> -->
-						<h1>{title}</h1>
-						<hr />
+		<div class="container mx-auto px-4">
+  
+			<h1 class="text-4xl font-bold text-center mt-16 mb-16">{title}</h1>
+		  
+			<!-- <Image src={hero_image.src} alt="Featured Image" class="rounded-lg w-1/2 mx-auto shadow-md mb-8" loading = "eager"></Image> -->
+  
+
+			<div class="max-w-3xl mx-auto">
+
+				<h2 class="text-2xl font-semibold mb-4">Intro</h2>
+				<p class="text-lg leading-relaxed">{description}</p>
+			
+			
+				<div class="divide-y divide-gray-200">
+				  <div class="py-4">
+					<h3 class="text-xl font-medium mb-2">Subsection Heading</h3>
+					<p>xyz</p>
+				  </div>
+				  <div class="py-4">dd
 					</div>
-					<slot />
 				</div>
-			</article>
-		</main>
+			
+			
+				<!-- <Image src={hero_image.src} alt="Content1" class="rounded-lg w-3/4  mx-auto shadow-md mt-8 mb-4" ></Image> -->
+			
+				<p class="text-lg leading-relaxed">Additional content.</p>
+			  </div>
+			
+			
+			</div>
+		  
+		
+		<slot/>
+
 		<Footer />
 	</body>
 </html>

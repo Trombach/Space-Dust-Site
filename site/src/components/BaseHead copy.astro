@@ -1,5 +1,7 @@
 ---
-// import '../styles/global.css'; // problem in css 
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
 
 interface Props {
 	title: string;
@@ -15,7 +17,7 @@ const { title, description, image = '../assets/images/bg1.webp' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="/site_logo.png" />
+<link rel="icon" type="image/svg+xml" href="../assets/icons/black-instagram-icon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
@@ -26,7 +28,7 @@ const { title, description, image = '../assets/images/bg1.webp' } = Astro.props;
 <!-- <link rel="canonical" href={canonicalURL} /> -->
 
 <!-- Primary Meta Tags -->
-<title>{title} | Space Dust</title>
+<title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
