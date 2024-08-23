@@ -1,0 +1,25 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'First post MDX'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Jul 08 2022'
+author: 'Samrridh Khanna'
+imgaddr : '../../assets/images/AURA.webp'
+# hero_image: {
+# src: '../../assets/images/AURA.webp',
+# alt: 'First Post',
+# } 
+path: './blog/first-post'
+---
+import { Image } from 'astro:assets';
+import rocket from '../../assets/images/home/1.webp';
+
+# My MDX Page
+
+// Local image stored in the the same folder
+![Houston in the wild](../../assets/images/home/1.webp)
+
+// Local image stored in src/assets/
+<Image src={rocket} alt="A rocketship in space." />
+<img src={rocket.src} alt="A rocketship in space." />
+![A rocketship in space](../../assets/images/home/2.webp)

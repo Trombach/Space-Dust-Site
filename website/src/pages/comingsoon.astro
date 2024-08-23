@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import ContentImage1 from '../assets/images/home/2.webp'
+---
+
+<head>
+  <title>Coming Soon</title>
+</head>
+
+<div class="relative h-screen bg-cover bg-center bg-no-repeat">
+  <Image src={ContentImage1} alt="Background Image" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-black opacity-25"></div> <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl font-bold">
+    Coming Soon
+  </div>
+</div>
