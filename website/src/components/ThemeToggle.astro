@@ -1,0 +1,25 @@
+---
+import { useEffect, useState } from 'preact/hooks';
+
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState(
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  );
+
+  useEffect(() => {
+    document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  return (
+    <button onClick={toggleTheme} className="text-gray-500 dark:text-gray-400">
+      {theme === 'light' ? '🌙' : '🌞'}
+    </button>
+  );
+}
+---

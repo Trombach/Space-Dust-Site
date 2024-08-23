@@ -1,0 +1,18 @@
+---
+const {ytsrc } = Astro.props;
+---
+<!-- https://github.com/paulirish/lite-youtube-embed?tab=readme-ov-file
+ use above link instead of iframe below, or check compoarison -->
+
+ <!-- ytsrc :" https://www.youtube.com/embed/Y8Wp3dafaMQ" -->
+<iframe
+  loading = "lazy"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/watch?v=hg5wSrl6q1s"
+  srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/Y8Wp3dafaMQ?autoplay=1><img src=https://img.youtube.com/vi/Y8Wp3dafaMQ/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  title="The Dark Knight Rises: What Went Wrong? – Wisecrack Edition"
+></iframe>
